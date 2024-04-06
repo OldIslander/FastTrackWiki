@@ -1,0 +1,25 @@
+<body>
+  <div class="navbar">
+    <a [routerLink]="['/']">Home</a>
+    <a *ngIf="admin" [routerLink]="['/select-company']">Company</a>
+    <a [routerLink]="['/teams']">Teams</a>
+    <a *ngIf="admin" [routerLink]="['/user-registry']">Users</a>
+    <a [routerLink]="['/login']" (click)="logout()">Logout</a>
+  </div>
+
+  <div class="main-content">
+    <h1 class="text-center">Home</h1>
+
+    <h2>Announcements</h2>
+    <button *ngIf="admin" routerLink="/create-announcement">Create Announcement</button>
+
+    <div class="announcement-container" *ngFor="let announcement of announcements">
+      <div class="announcement">
+        <h2>{{ announcement.title }}</h2>
+        <h3>Author: {{ announcement.author.profile.firstName }}</h3>
+        <h4>Date: {{ announcement.date }}</h4>
+        <p>{{ announcement.message }}</p>
+      </div>
+    </div>
+  </div>
+</body>

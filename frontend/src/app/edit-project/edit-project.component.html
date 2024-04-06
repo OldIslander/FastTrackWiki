@@ -1,0 +1,31 @@
+<body>
+
+
+  <div class="project-edit-container">
+      <h2>Edit Project</h2>
+
+    <div class="form-container">
+      <form>
+        <div class="form-entry">
+          <label for="title">Project Name:</label>
+          <input type="text" id="title" name="title" class="input-field" [(ngModel)]="name">
+        </div>
+        <div class="form-entry">
+          <label for="message">Description:</label>
+          <input type="text" id="message" name="message" class="input-field" [(ngModel)]="description">
+        </div>
+        <div class="form-entry">
+          <label>Active/Inactive:</label>
+          <select #dropdown class="input-field" (change)="onDropdownChange(dropdown.value)">
+            <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="button-group">
+    <button routerLink="/teams" class="back-button">Back</button>
+    <button (click)="onSubmit()" routerLink="/teams" class="submit-button">Submit</button>
+  </div>
+</body>

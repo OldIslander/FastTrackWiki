@@ -1,0 +1,50 @@
+<body>
+    <div class="navbar">
+        <a routerLink="/">Home</a>
+        <a routerLink="/company">Company</a>
+        <a routerLink="/teams">Teams</a>
+        <a routerLink="/user-registry">Users</a>
+        <a routerLink="/login">Logout</a>
+    </div>
+
+    <div class="content-container">
+        <div class="text-center">
+            <h2>Create a Team</h2>
+        </div>
+
+    <div class="form-container">
+        <form action="#" method="post">
+            <div class="form-entry">
+                <label for="title">Team Name:</label>
+                <input type="text" id="title" name="title" class="announcement-input" [(ngModel)]="name"><br>
+                
+            </div>
+
+            <div class="form-entry">
+                <label for="message">Description:</label>
+                <input type="text" id="message" name="message" class="announcement-input" [(ngModel)]="description"><br>
+            </div>
+
+            <div class="form-entry">
+                <label for="dropdown">Select members:</label>
+                <select [(ngModel)]="selectedOption" [ngModelOptions]="{standalone: true}" (change)="onDropdownChange(selectedOption)">
+                    <option *ngFor="let option of options" [ngValue]="option">{{ option.profile.firstName }}</option>
+                </select>
+            </div>
+            <div class="form-entry">
+                <div class="addname-container">
+                    <div *ngFor="let entry of entries" class="entry">
+                        <p>{{ entry.profile.firstName }}</p> 
+                        <button (click)="removeEntry(entry)">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+
+        <div class="button-container">
+            <button routerLink="/teams" class="back-button">Back</button>
+            <button class="submit-button" (click)="onSubmit()" routerLink="/teams">Submit</button>
+        </div>
+    </div>
+</body>

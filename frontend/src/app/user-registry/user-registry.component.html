@@ -1,0 +1,45 @@
+<div class="navbar">
+    <a routerLink="/">Home</a>
+    <a routerLink="/select-company">Company</a>
+    <a routerLink="/teams">Teams</a>
+    <a routerLink="/user-registry">Users</a>
+    <a routerLink="/login">Logout</a>
+</div>
+
+<div class="user-registry-container">
+    <h1>User Registry</h1>
+    <p class="subheading">A general view of all your members in your organization</p>
+
+    <div class="user-registry-box">
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Active</th>
+                    <th>Admin</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.profile.firstName }} {{ user.profile.lastName }}</td>
+                    <td>{{ user.profile.email }}</td>
+                    <td>{{ user.active ? 'Yes' : 'No' }}</td>
+                    <td>{{ user.admin ? 'Yes' : 'No' }}</td>
+                    <td>{{ user.status }}</td>
+                    <!-- <td *ngIf="isAdmin">
+                        <button *ngIf="isAdmin" (click)="deleteUser(user?.credentials?.username)" class="delete-user-button">Delete</button>
+                    </td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button *ngIf="isAdmin" (click)="toggleOverlay()" class="add-user-button">Add User</button>
+    <div *ngIf="!isAdmin">
+        <p class="subheading">You do not have permission to add users</p>
+    </div>
+</div>
+
+<app-add-user-overlay *ngIf="showAddUserOverlay" (close)="toggleOverlay()"
+    (userAdded)="fetchUsers()"></app-add-user-overlay>

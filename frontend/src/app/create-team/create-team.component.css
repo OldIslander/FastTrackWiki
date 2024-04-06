@@ -1,0 +1,138 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #0F0F0F;
+    color: #9EC8B9;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-center h2 {
+    margin-bottom: 20px;
+    color: #9EC8B9;
+    font-size: 24px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    max-width: 500px;
+    background-color: #232D3F;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid #9EC8B9;
+    margin-bottom: 20px;
+}
+
+.form-entry {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-entry label {
+    color: #9EC8B9;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    max-width: 500px;
+}
+
+.form-entry input,
+.form-entry select {
+    width: 100%;
+    min-width: 400px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #232D3F;
+    color: #9EC8B9;
+    border: 1px solid #9EC8B9;
+    border-radius: 5px;
+}
+
+button,
+.submit-button,
+.back-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #005B41;
+    color: #9EC8B9;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 5px;
+}
+
+button:hover,
+.submit-button:hover,
+.back-button:hover {
+    background-color: #008170;
+}
+
+.addname-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.addedname {
+    background-color: #dbdbdb;
+    color: #0F0F0F;
+    border: 3px solid #666666;
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.addedname button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.addedname button:hover {
+    background-color: #0056b3;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #232D3F;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.navbar a {
+    color: #9EC8B9;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+} 
